@@ -1,9 +1,9 @@
 # nileventmanagerjs
 Provides simple to use API for managing custom js events.
 
-Available as npm package
-
-```npm i nileventmanagerjs```
+Install
+---
+```npm i nileventmanagerjs ```
 
 Examples
 ---
@@ -38,4 +38,21 @@ Firing the event:
     
     ...
     
+```
+
+"Eventifying" other objects:
+```javascript
+    function User() {
+        username: "jj"
+    };
+    
+    var user = new User();
+    
+    em.eventify(user);
+    
+    user.on("usernameChanged", userpanel.updateUsername);
+    
+    user.username = "jk";
+    
+    user.fire("usernameChanged");
 ```
