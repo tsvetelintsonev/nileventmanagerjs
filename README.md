@@ -54,5 +54,5 @@ Firing the event:
     
     user.username = "jk";
     
-    user.fire("usernameChanged");
+    user.fire("usernameChanged", user.username);
 ```
