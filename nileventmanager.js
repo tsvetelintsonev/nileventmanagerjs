@@ -1,18 +1,18 @@
 (function() {
     "use strict";
 
-    var NileventManager = function() {
+    var NileventManager = function NileventManager() {
         this.listeners = {};
     }
 
-    NileventManager.prototype.on = function(event, handler) {
+    NileventManager.prototype.on = function on(event, handler) {
         if(typeof handler != "function") throw Error("NileventManager: only callback functions may be registered as event handlers.");
 
         (this.listeners[event] || (this.listeners[event] = [])).push(handler);
         return this;
     }
 
-    NileventManager.prototype.off = function(event, handler) {
+    NileventManager.prototype.off = function off(event, handler) {
         var listeners, listenersLength, i;
 
         listeners = this.listeners[event];
@@ -34,7 +34,7 @@
         return this;
     }
 
-    NileventManager.prototype.fire = function() {
+    NileventManager.prototype.fire = function fire() {
         var event, args, listeners, listenersLength, i;
         event = arguments[0];
 
@@ -48,6 +48,19 @@
             }
         }
         return this;
+    }
+
+    NileventManager.prototype.eventify = function eventify(object) {
+        var methods, methodsLength, listeners, i;
+        methods = Object.keys(NileventManager.prototype);
+        methodsLength = methods.length;
+        listeners = {};
+
+        for(i = 0; i < methodsLength; i++) {
+            object[methods[i]] = NileventManager.prototype[methods[i]];
+        }
+        object["listeners"] = listeners;
+        return object;
     }
 
     if (typeof module !== "undefined" && module !== null) {
