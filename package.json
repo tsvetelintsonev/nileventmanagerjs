@@ -1,6 +1,6 @@
 {
   "name": "nileventmanagerjs",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Event manager.",
   "keywords": [
     "event manager",
@@ -24,6 +24,7 @@
     }
   ],
   "scripts": {
+    "deploy-minor": "npm version minor --force -m \"Tag %s was created automatically from npm.\"",
     "deploy-patch": "npm version patch --force -m \"Tag %s was created automatically from npm.\"",
     "postversion": "git add . && git push && git push --tags && npm publish"
   },
