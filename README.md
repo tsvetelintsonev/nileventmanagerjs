@@ -1,6 +1,10 @@
 # nileventmanagerjs
 Provides simple to use API for managing custom js events.
 
+Available as npm package
+
+```npm i nileventmanagerjs```
+
 Examples
 ---
 
