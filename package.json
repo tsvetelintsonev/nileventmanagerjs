@@ -1,0 +1,41 @@
+{
+  "name": "nileventmanagerjs",
+  "version": "1.0.0",
+  "description": "Event manager.",
+  "keywords": [
+    "event manager",
+    "event emitter",
+    "custom events"
+  ],
+  "homepage": "",
+  "main": "nileventmanager.js",
+  "maintainers": [
+    {
+      "name": "Tsvetelin Tsonev",
+      "email": "github.tsonev@yahoo.com",
+      "web": "https://t-tsonev.me"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Tsvetelin Tsonev",
+      "email": "github.tsonev@yahoo.com",
+      "web": "https://t-tsonev.me"
+    }
+  ],
+  "scripts": {
+    "deploy-patch": "npm version patch --force -m \"Tag %s was created automatically from npm.\"",
+    "postversion": "git add . && git push && git push --tags && npm publish"
+  },
+  "bugs": {
+    "email": "github.tsonev@yahoo.com",
+    "url": "https://github.com/tsvetelintsonev/nileventmanagerjs/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsvetelintsonev/nileventmanagerjs"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
